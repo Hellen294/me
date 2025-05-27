@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Website Directory</title>
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #121212;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  header {
+    background: #1f1f1f;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #4ade80; /* green */
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    padding: 10px 16px;
+    background: #222;
+    border-radius: 6px;
+    transition: background 0.3s;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #4ade80;
+  }
+
+  .nav-links a:hover {
+    background: #4ade80;
+    color: #121212;
+  }
+
+  /* Dropdown container */
+  .dropdown {
+    position: relative;
+  }
+
+  /* Dropdown button */
+  .dropbtn {
+    cursor: pointer;
+    background: #222;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #4ade80;
+    border: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+  }
+
+  .dropbtn:hover {
+    background: #4ade80;
+    color: #121212;
+  }
+
+  /* Dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    min-width: 140px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    border-radius: 8px;
+    top: 110%;
+    right: 0;
+    z-index: 200;
+    flex-direction: column;
+    padding: 8px 0;
+  }
+
+  .dropdown-content a {
+    padding: 10px 16px;
+    color: #4ade80;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+  }
+
+  .dropdown-content a:hover {
+    background: #4ade80;
+    color: #121212;
+  }
+
+  /* Show dropdown */
+  .dropdown.show .dropdown-content {
+    display: flex;
+  }
+
+  /* Main content container */
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #181818, #121212);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4ade80;
+    text-shadow: 0 0 8px #4ade80;
+  }
+
+  /* Buttons grid */
+  .buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .btn-link {
+    background: #222;
+    border: 2px solid #4ade80;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4ade80;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 8px #4ade80;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+
+  .btn-link:hover {
+    background: #4ade80;
+    color: #121212;
+    box-shadow: 0 0 16px #86efac;
+    transform: scale(1.05);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+    .btn-link {
+      font-size: 1.1rem;
+      padding: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">My Directory</div>
+  <nav>
+    <div class="nav-links">
+      <a href="#grant" target="_blank" rel="noopener">Grant Application</a>
+      <a href="#car" target="_blank" rel="noopener">Car Agent</a>
+      <a href="#celebrity" target="_blank" rel="noopener">Celebrity Web</a>
+      <a href="#house" target="_blank" rel="noopener">House Agent</a>
+      <a href="#delivery" target="_blank" rel="noopener">Delivery Service</a>
+
+      <div class="dropdown" id="adminDropdown">
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false" id="dropbtn">
+          Admin Pages ▼
+        </button>
+        <div class="dropdown-content" role="menu" aria-labelledby="dropbtn">
+          <a href="https://sba-grant-approval-rose.vercel.app/configuration.html" target="_blank" rel="noopener" role="menuitem">Grant</a>
+          <a href="https://philip-adams-car-agent.vercel.app/agent-info.html" target="_blank" rel="noopener" role="menuitem">Car Request</a>
+          <a href="https://grant-writer-assistance.vercel.app/wght@400;600&display=swap.html" target="_blank" rel="noopener" role="menuitem">Grant Writer</a>
+          <a href="https://aria-monroe.vercel.app/incoming.html" target="_blank" rel="noopener" role="menuitem">Celeb incoming call</a>
+          <a href="#admin5" target="_blank" rel="noopener" role="menuitem">Admin5</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h1>Welcome to Your Website Directory</h1>
+  <div class="buttons-grid">
+    <a href="https://sba-grant-approval-rose.vercel.app/" target="_blank" rel="noopener" class="btn-link">Grant Application</a>
+    <a href="https://philip-adams-car-agent.vercel.app/" target="_blank" rel="noopener" class="btn-link">Car Agent</a>
+    <a href="https://aria-monroe.vercel.app" target="_blank" rel="noopener" class="btn-link">Celebrity Web</a>
+    <a href="#house" target="_blank" rel="noopener" class="btn-link">House Agent</a>
+    <a href="https://car-purchase-confirmation.vercel.app/delivery-receipt-2.html" target="_blank" rel="noopener" class="btn-link">Car Delivery</a>
+    <a href="#house" target="_blank" rel="noopener" class="btn-link">Empty</a>
+    <a href="#house" target="_blank" rel="noopener" class="btn-link">Empty</a>
+    <a href="#house" target="_blank" rel="noopener" class="btn-link">Empty</a>
+    <a href="#house" target="_blank" rel="noopener" class="btn-link">Empty</a>
+  </div>
+</main>
+
+<script>
+  // Dropdown toggle
+  const dropdown = document.getElementById('adminDropdown');
+  const dropbtn = document.getElementById('dropbtn');
+
+  dropbtn.addEventListener('click', () => {
+    const expanded = dropbtn.getAttribute('aria-expanded') === 'true' || false;
+    dropbtn.setAttribute('aria-expanded', !expanded);
+    dropdown.classList.toggle('show');
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('show');
+      dropbtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+</body>
+</html>
